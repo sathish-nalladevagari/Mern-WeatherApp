@@ -6,7 +6,7 @@ const cors = require('cors');
 const axios = require('axios')
 
 const app = Express()
-const port = 5000 || process.env.port
+const port = 5000 || process.env.PORT
 app.use(Express.json())
 app.use(cors())
 app.use(Express.static(path.join(__dirname, 'client/weatherapp/dist')));

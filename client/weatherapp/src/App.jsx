@@ -4,9 +4,10 @@ function App() {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
 
+  const baseUrl  = process.env.PORT || "http://localhost:5000"
   const fetchWeatherData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/weather?city=${city}`);
+      const response = await fetch(baseUrl`/weather?city=${city}`);
       if (response.ok) {
         const data = await response.json();
         setWeatherData(data);
