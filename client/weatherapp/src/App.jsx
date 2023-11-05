@@ -4,10 +4,9 @@ function App() {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
 
-  const baseUrl  = "https://weatherapp-ayn9.onrender.com"
   const fetchWeatherData = async () => {
     try {
-      const response = await fetch(baseUrl`/weather?city=${city}`);
+      const response = await fetch(`https://weatherapp-ayn9.onrender.com/weather?city=${city}`);
       if (response.ok) {
         const data = await response.json();
         setWeatherData(data);
