@@ -9,10 +9,10 @@ const app = Express()
 const port = 5000 || process.env.PORT
 app.use(Express.json())
 app.use(cors())
-app.use(Express.static(path.join(__dirname, 'client/weatherapp/dist')));
+app.use(Express.static(path.join(__dirname, './dist')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/weatherapp/dist', 'index.html'));
+    res.sendFile(path.join(__dirname, './dist', 'index.html'));
   });
 
   app.get('/weather', async (req, res) => {
